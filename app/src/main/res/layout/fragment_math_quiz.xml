@@ -4,18 +4,88 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
 
+        <variable
+            name="game"
+            type="com.example.quizmath.MathQuizFragment" />
+
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MathQuizFragment">
+        android:layout_height="match_parent">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            tools:context=".MathQuizFragment">
 
-    </LinearLayout>
+            <!-- TODO: Update blank fragment layout -->
+            <TextView
+                android:id="@+id/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{game.currentQuestion.text}"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold">
+            </TextView>
 
+            <RadioGroup
+                android:id="@+id/questionRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/firstAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@{game.answers[0]}"
+                    >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/secondAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{game.answers[1]}"
+                    >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/thirdAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{game.answers[2]}"
+                    >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/fourthAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{game.answers[3]}"
+                    >
+                </RadioButton>
+                
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submit_button_text"
+                android:layout_gravity="center">
+            </Button>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 </layout>

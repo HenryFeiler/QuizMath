@@ -17,6 +17,10 @@
     <fragment
         android:id="@+id/mathQuizFragment"
         android:name="com.example.quizmath.MathQuizFragment"
-        android:label="fragment_math_quiz"
-        tools:layout="@layout/fragment_math_quiz" />
+        android:label="MathQuizFragment"
+        tools:layout="@layout/fragment_math_quiz">
+        <action
+            android:id="@+id/action_mathQuizFragment_to_beginningFragment2"
+            app:destination="@id/beginningFragment" />
+    </fragment>
 </navigation>
